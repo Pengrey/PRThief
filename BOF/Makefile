@@ -1,17 +1,12 @@
 NAME   := prthief
 
-CC     := clang -target x86_64-w64-mingw32
+CC     := x86_64-w64-mingw32-gcc
 
-CFLAGS := -c -Os -nostdlib -fno-asynchronous-unwind-tables -std=c++20
-CFLAGS += -fno-ident -fpack-struct=8 -falign-functions=1 -s -w -mno-sse
-CFLAGS += -ffunction-sections -falign-jumps=1 -falign-labels=1
-CFLAGS += -Wl,-s,--no-seh,--enable-stdcall-fixup -fno-exceptions
+CFLAGS := -c
 
 CHS    :=  -Iinclude
 
-CLIBS  :=  -lkernel32 -luser32 -lole32
-
-SRC    := $(wildcard src/*.cc)
+SRC    := $(wildcard src/*.c)
 
 # Logger
 define log_info
