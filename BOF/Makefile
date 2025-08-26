@@ -6,6 +6,8 @@ CFLAGS := --ld-path=boflink -nostartfiles
 
 CHS    :=  -Iinclude
 
+CLIBS  :=  -lole32
+
 SRC    := $(wildcard src/*.c)
 
 # Logger
@@ -29,4 +31,4 @@ clean:
 	@ rm -f bin/*.o
 	@ $(call log_success)
 
-.PHONY: release debug clean
+.PHONY: release clean
