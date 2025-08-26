@@ -1,8 +1,8 @@
 NAME   := prthief
 
-CC     := x86_64-w64-mingw32-gcc
+CC     := clang -target x86_64-w64-mingw32
 
-CFLAGS := -c
+CFLAGS := --ld-path=boflink -nostartfiles
 
 CHS    :=  -Iinclude
 
