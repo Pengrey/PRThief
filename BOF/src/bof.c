@@ -1,6 +1,5 @@
-#include <windows.h>
-#include "beacon.h"
-#include <proofofpossessioncookieinfo.h>
+#include <common.h>
+#include <custom.h>
 
 int go(char* args, int argc) {
     LPCWSTR uri = L"https://login.microsoftonline.com/";

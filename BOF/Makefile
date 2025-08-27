@@ -3,6 +3,10 @@ NAME   := prthief
 CC     := clang -target x86_64-w64-mingw32
 
 CFLAGS := --ld-path=boflink -nostartfiles
+CFLAGS += -Os -nostdlib -fno-asynchronous-unwind-tables
+CFLAGS += -fno-ident -fpack-struct=8 -falign-functions=1 -w -mno-sse
+CFLAGS += -ffunction-sections -falign-jumps=1 -falign-labels=1
+CFLAGS += -fno-exceptions
 
 CHS    :=  -Iinclude
 
