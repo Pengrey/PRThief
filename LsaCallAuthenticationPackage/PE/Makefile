@@ -9,7 +9,7 @@ CFLAGS += -Wl,-s,--no-seh,--enable-stdcall-fixup -fno-exceptions -e start
 
 CHS    :=  -Iinclude
 
-CLIBS  :=  -lkernel32 -luser32 -lole32
+CLIBS  :=  -lkernel32 -luser32 -lwininet -lntdll -lsecur32 -ladvapi32
 
 SRC    := $(wildcard src/*.cc)
 
@@ -36,6 +36,7 @@ debug:
 
 clean:
 	@ $(call log_info,Cleaning build artifacts)
+	@ rm -f *.o
 	@ rm -f bin/*.exe
 	@ $(call log_success)
 
